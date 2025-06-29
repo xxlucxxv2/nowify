@@ -1,36 +1,72 @@
-/**
- * Component: Authorise
- * -----------------------------------------------------------------------------
- * Base style for the 'authorise' component.
- *
- */
 .authorise {
-  align-items: center;
-  background-color: var(--colour-background-now-playing);
-  color: var(--color-text-primary);
   display: flex;
-  flex-flow: column nowrap;
-  height: 100%;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  height: 100%;
   padding: var(--spacing-l);
 
-  &__heading {}
+  background-color: #1e1e2e; // Catppuccin Mocha base background
+  color: #cdd6f4; // Catppuccin text color (soft off-white)
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-m);
+    color: #f5e0dc; // soft warm pink (Catppuccin rosewater)
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6); // subtle depth for text
+  }
+
   &__copy {
     max-width: 480px;
     text-align: center;
-    margin: 0 0 var(--spacing-m) 0;
+    margin-bottom: var(--spacing-m);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #bac2de; // Catppuccin lavender text for secondary info
   }
 
   &__button {
-    margin-bottom: var(--spacing-l);
+    padding: 0.75rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #94e2d5, #89b4fa); // Material You pastel blue-green
+    color: #1e1e2e; // dark text for contrast
+    cursor: pointer;
+    box-shadow:
+      0 4px 6px rgba(137, 180, 250, 0.4),
+      0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      box-shadow:
+        0 8px 12px rgba(137, 180, 250, 0.6),
+        0 4px 6px rgba(0, 0, 0, 0.35);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(137, 180, 250, 0.5);
+    }
   }
 
   &__credit {
-    opacity: 0.8;
-    font-size: 0.7em;
+    margin-top: var(--spacing-l);
+    font-size: 0.75rem;
+    opacity: 0.6;
+    color: #585b70; // Catppuccin overlay color
+    font-style: italic;
 
     a {
-      color: inherit;
+      color: #89b4fa; // Material You accent blue
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
