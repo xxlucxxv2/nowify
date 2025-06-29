@@ -1,46 +1,66 @@
-/**
- * Component: Now Playing.
- * -----------------------------------------------------------------------------
- * Styles for the 'Now Playing' screen.
- *
- */
 .now-playing {
-  background-color: var(--colour-background-now-playing);
-  color: var(--color-text-primary);
+  background-color: #1e1e2e; /* Catppuccin Mocha background */
+  color: #cdd6f4; /* text primary, lighter */
   display: flex;
   flex-flow: column nowrap;
   height: 100%;
-  padding: var(--spacing-l);
+  padding: 2rem;
   width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   &__cover,
   &__details {
-    padding: var(--spacing-m);
+    padding: 1rem;
     text-align: center;
     width: 100%;
   }
 
   &__cover {
     max-width: 400px;
+    margin: 0 auto;
   }
 
   &__image {
-    box-shadow: 1px 1px 16px -2px rgba(0, 0, 0, .3);
-    height: auto;
+    box-shadow: 0 4px 20px rgba(166, 227, 161, 0.3); /* subtle green shadow */
+    border-radius: 16px;
     max-width: 60vw;
     width: 100%;
+    height: auto;
   }
 
   &__details {
     text-align: center;
+    margin-top: 1.5rem;
   }
 
   &__track {
-    font-weight: var(--font-weight-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #b4befe; /* Catppuccin blue accent */
+    margin-bottom: 0.5rem;
   }
 
   &__artists {
     opacity: 0.8;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Progress bar container */
+  &__progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #444459; /* dark grey */
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  /* Progress bar fill */
+  &__progress {
+    height: 100%;
+    background-color: #a6e3a1; /* Catppuccin green accent */
+    width: 0%;
+    transition: width 0.4s ease-in-out;
   }
 
   &--active {
@@ -66,6 +86,8 @@
 
     &__details {
       text-align: left;
+      margin-top: 0;
+      padding-left: 2rem;
     }
   }
 }
