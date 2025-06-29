@@ -59,7 +59,7 @@ export default {
      */
     getTrackArtists() {
       return this.player.trackArtists.join(', ')
-    }
+    },
 
     progressPercent() {
     return this.durationMs > 0
