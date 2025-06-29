@@ -46,7 +46,7 @@ export default {
       playerResponse: {},
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
-      swatches: []
+      swatches: [],
       progressMs: 0,
       durationMs: 0
     }
