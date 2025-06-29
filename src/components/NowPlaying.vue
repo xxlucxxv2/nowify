@@ -48,7 +48,8 @@ export default {
       colourPalette: '',
       swatches: [],
       progressMs: 0,
-      durationMs: 0
+      durationMs: 0,
+      tickTimer: null
     }
   },
 
@@ -249,6 +250,21 @@ export default {
 
       this.progressMs = this.playerResponse.progress_ms
       this.durationMs = this.playerResponse.item.duration_ms
+
+      clearInterval(this.tickTimer) // reset timer
+
+      // Start ticking local progress
+      this.tickTimer = setInterval(() => {
+        if (this.progressMs < this.durationMs) {
+          this.progressMs += 250
+        }
+      }, 1000)
+
+      if (this.playerResponse.is_playing === false) {
+        clearInterval(this.tickTimer)
+        this.playerData = this.getEmptyPlayer()
+        return
+      }
     },
 
     /**
