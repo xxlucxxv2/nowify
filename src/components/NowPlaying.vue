@@ -47,6 +47,8 @@ export default {
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
       swatches: []
+      progressMs: 0,
+      durationMs: 0
     }
   },
 
@@ -57,6 +59,12 @@ export default {
      */
     getTrackArtists() {
       return this.player.trackArtists.join(', ')
+    }
+
+    progressPercent() {
+    return this.durationMs > 0
+      ? Math.min((this.progressMs / this.durationMs) * 100, 100)
+      : 0
     }
   },
 
@@ -238,6 +246,9 @@ export default {
           image: this.playerResponse.item.album.images[0].url
         }
       }
+
+      this.progressMs = this.playerResponse.progress_ms
+      this.durationMs = this.playerResponse.item.duration_ms
     },
 
     /**
