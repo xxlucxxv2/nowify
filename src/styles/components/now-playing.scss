@@ -6,6 +6,13 @@
     url(SpaceMonoNF.woff) format("woff");
 }
 
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  background-color: var(--colour-background-now-playing);
+  color: var(--color-text-primary);
+}
+
 .now-playing {
   background-color: #1e1e2e; /* Catppuccin Mocha background */
   color: #cdd6f4; /* text primary, lighter */
